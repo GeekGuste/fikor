@@ -6,3 +6,4 @@ fikor/settings.py
 fikor/wsgi.py
 __pycache__/
 biens/
+.idea/
