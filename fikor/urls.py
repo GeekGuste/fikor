@@ -17,7 +17,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import  include, url
+from django.conf.urls import include, url
 from django.conf import settings
 
 from biens import views
@@ -29,14 +29,14 @@ urlpatterns = [
 ]
 if settings.DEBUG:
     import debug_toolbar
-    urlpatterns =[
+    urlpatterns = [
         url(r'^__debug__/', include(debug_toolbar.urls)),
-    path('', include('fikor_client.urls')),
-    path('admin/', admin.site.urls),
-]
+        path('', include('fikor_client.urls')),
+        path('admin/', admin.site.urls),
+    ]
 
 if settings.DEBUG:
     import debug_toolbar
-    urlpatterns =[
+    urlpatterns = [
         url(r'^_debug_/', include(debug_toolbar.urls)),
     ] + urlpatterns
