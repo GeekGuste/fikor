@@ -29,6 +29,11 @@
   <link rel="stylesheet" href="{% static 'css/aos.css' %}">
 
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <style>
+    .site-menu-toggle{
+      color: #20c997 !important;
+    }
+  </style>
   {% block css %}{% endblock %}
 
 </head>
@@ -55,7 +60,7 @@
         <div class="row align-items-center">
 
           <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h1 class="mb-0"><a href="index.html" class="text-white h2 mb-0">Fikor</a></h1>
+            <h1 class="mb-0"><a href="{% url 'index' %}" class="text-white h2 mb-0">Fikor</a></h1>
           </div>
           <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
@@ -160,11 +165,6 @@
 
   <script src="{% static 'js/main.js' %}"></script>
 
-  <script>
-    $(document).ready(function () {
-      $('#lightgallery').lightGallery();
-    });
-  </script>
   {% block javascripts %}{% endblock %}
 
 </body>
