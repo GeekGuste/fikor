@@ -62,6 +62,7 @@
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li class=""><a href="{% url 'index' %}">Accueil</a></li>
+                {% if user.is_authenticated %}
                 <li class="has-children">
                   <a href="single.html">Groupes</a>
                   <ul class="dropdown">
@@ -70,8 +71,9 @@
                     <li><a href="#"></a></li>
                   </ul>
                 </li>
+                {% endif %}
                 <li><a href="{% url 'contact' %}">Contact</a></li>
-                <li><a href="{% url 'contact' %}">Connexion</a></li>
+                {% if user.is_authenticated %}
                 <li class="has-children">
                   <a href="single.html">Mon compte</a>
                   <ul class="dropdown">
@@ -80,6 +82,9 @@
                     <li><a href="#">Deconnexion</a></li>
                   </ul>
                 </li>
+                {% else %}
+                <li><a href="{% url 'contact' %}">Connexion</a></li>
+                {% endif %}
               </ul>
             </nav>
           </div>
